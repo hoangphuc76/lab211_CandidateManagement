@@ -12,7 +12,8 @@ import java.util.Date;
  * @author LENOVO
  */
 public class Candidate {
-    protected int id = 0;
+    protected static int nextId = 1;
+    protected int id;
     protected String firstName, lastName;
     protected LocalDate dob;
     protected String phoneNumber;
@@ -20,7 +21,7 @@ public class Candidate {
     protected int canType;
 
     public Candidate(String firstName, String lastName, LocalDate dob, String phoneNumber, String email, int canType) {
-        this.id++;
+        this.id = nextId++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
