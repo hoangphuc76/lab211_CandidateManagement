@@ -54,20 +54,7 @@ public class Validations {
         }
     }
 
-    public String getStringFromInput(String name) {
-        Scanner sc = new Scanner(System.in);
-        String s = null;
-        boolean test = true;
-        while (s == null || s.isEmpty() && test) {
-            System.out.print(String.format("Enter %s: ", name));
-            s = sc.nextLine();
-            if (s.length() < 10) {
-                System.out.println("Phone must have minimum 10 characters");
-                test = false;
-            }
-        }
-        return s;
-    }
+
     public String getString(String name) {
         Scanner sc = new Scanner(System.in);
         String s = null;

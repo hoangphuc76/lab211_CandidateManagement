@@ -25,7 +25,7 @@ public class CandidateView {
         String firstName = vd.getString("first name"), 
                 lastName = vd.getString("last name");
         LocalDate dob = vd.getDateFromInput("date of birth");
-        String phone = vd.getStringFromInput("phone number"),
+        String phone = vd.inputPatter("phone number", "[0-9]{10,}"),
                 email = vd.inputPatter("email", "[a-zA-Z0-9]{1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}");
 
         int yoe = vd.getIntFromInput("year of experience", 0, 11);
@@ -38,7 +38,7 @@ public class CandidateView {
         String firstName = vd.getString("first name"), 
                 lastName = vd.getString("last name");
         LocalDate dob = vd.getDateFromInput("date of birth");
-        String phone = vd.getStringFromInput("phone number"),
+        String phone = vd.inputPatter("phone number", "[0-9]{10,}"),
                 email = vd.inputPatter("email", "[a-zA-Z0-9]{1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}");
         int graTime = vd.getIntFromInput("year of graduation", 1950, 2024);
         String rog = chooseTypeGrad();
@@ -51,7 +51,7 @@ public class CandidateView {
         String firstName = vd.getString("first name"), 
                 lastName = vd.getString("last name");
         LocalDate dob = vd.getDateFromInput("date of birth");
-        String phone = vd.getStringFromInput("phone number"),
+        String phone = vd.inputPatter("phone number", "[0-9]{10,}"),
                 email = vd.inputPatter("email", "[a-zA-Z0-9]{1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}"),
                 majors = vd.getString("major"),
                 semester = vd.getString("semester"),
