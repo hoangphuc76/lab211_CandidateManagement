@@ -22,8 +22,8 @@ public class CandidateView {
     private Validations vd = new Validations();
 
     public ExperienceCandidate getExCandidate() {
-        String firstName = vd.getString("first name"), 
-                lastName = vd.getString("last name");
+        String firstName = vd.getName("first name"),
+                lastName = vd.getName("last name");
         LocalDate dob = vd.getDateFromInput("date of birth");
         String phone = vd.inputPatter("phone number", "[0-9]{10,}"),
                 email = vd.inputPatter("email", "[a-zA-Z0-9]{1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}");
@@ -35,8 +35,8 @@ public class CandidateView {
     }
 
     public FresherCandidate getFresherCandidate() {
-        String firstName = vd.getString("first name"), 
-                lastName = vd.getString("last name");
+        String firstName = vd.getName("first name"),
+                lastName = vd.getName("last name");
         LocalDate dob = vd.getDateFromInput("date of birth");
         String phone = vd.inputPatter("phone number", "[0-9]{10,}"),
                 email = vd.inputPatter("email", "[a-zA-Z0-9]{1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}");
@@ -48,8 +48,8 @@ public class CandidateView {
     }
 
     public InterCandidate getInterCandidate() {
-        String firstName = vd.getString("first name"), 
-                lastName = vd.getString("last name");
+        String firstName = vd.getName("first name"),
+                lastName = vd.getName("last name");
         LocalDate dob = vd.getDateFromInput("date of birth");
         String phone = vd.inputPatter("phone number", "[0-9]{10,}"),
                 email = vd.inputPatter("email", "[a-zA-Z0-9]{1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}"),
@@ -57,7 +57,7 @@ public class CandidateView {
                 semester = vd.getString("semester"),
                 university = vd.getString("university name");
         InterCandidate ic = new InterCandidate(majors, semester, university, firstName, lastName, dob, phone, email);
-        return ic;       
+        return ic;
     }
 
     public String chooseTypeGrad() {
@@ -90,15 +90,18 @@ public class CandidateView {
         } while (choice < 1 && choice > 4);
         return res;
     }
+
     public String getName() {
         return vd.getString("Candidate name");
     }
+
     public int canType() {
         return vd.getIntFromInput("type of candidate", -1, 3);
     }
+
     public void display(List<Candidate> canList) {
         System.out.println("List of candidate: ");
-        System.out.println("===============EXPERIENCE CANDIDATE==================");
+        System.out.println("==========EXPERIENCE CANDIDATE==============");
         for (Candidate can : canList) {
             if (can instanceof ExperienceCandidate) {
                 System.out.println(can.toString());

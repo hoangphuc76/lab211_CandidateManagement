@@ -1,6 +1,5 @@
 package Common;
 
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -22,7 +21,7 @@ public class Validations {
                 if (number > con1 && number < con2) {
                     return number;
                 } else {
-                    System.out.println("Please enter the integer number > " + con1 +  " and < " + con2);
+                    System.out.println("Please enter the integer number > " + con1 + " and < " + con2);
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Only enter the integer number > 0 ");
@@ -30,10 +29,7 @@ public class Validations {
             }
         }
     }
-    
- 
-  
-    
+
     public LocalDate getDateFromInput(String name) {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -54,6 +50,20 @@ public class Validations {
         }
     }
 
+    public String getName(String name) {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder sb = null;
+        String s = null;
+        while (s == null || s.isEmpty()) {
+            System.out.print(String.format("Enter %s: ", name));
+            s = sc.nextLine();
+            sb = new StringBuilder(s);
+            if (Character.isLowerCase(sb.charAt(0))) {
+                sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
+            }
+        }
+        return sb.toString();
+    }
 
     public String getString(String name) {
         Scanner sc = new Scanner(System.in);
@@ -64,6 +74,7 @@ public class Validations {
         }
         return s;
     }
+
     public String inputPatter(String name, String pattern) {
         Scanner sc = new Scanner(System.in);
         String s = null;
